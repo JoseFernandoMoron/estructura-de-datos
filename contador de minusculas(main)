@@ -1,0 +1,13 @@
+#include "stdafx.h"
+#include "ejercicio.h"
+#include <iostream>
+using namespace std;
+int main(){
+	ejercicio var;
+	var.leercadena();
+	var.contarminusculas();
+	int respuesta= var.getminusculas();
+	cout<<"hay "<<respuesta<<" minusculas";
+	cin.ignore();
+  return 0;
+}
