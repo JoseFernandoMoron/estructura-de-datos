@@ -1,0 +1,54 @@
+MenuV.h
+#pragma once
+class MenuV
+{
+private:
+	int base;
+	int altura;
+	
+public:
+	MenuV(int,int);
+	float paralelogramo();
+    ~MenuV(void);
+};
+
+MenuV.cpp
+#include "StdAfx.h"
+#include "MenuV.h"
+
+
+MenuV::MenuV(int b, int h)
+{
+	base=b;
+	altura=h;
+}
+
+
+MenuV::~MenuV(void)
+{
+}
+
+float MenuV::paralelogramo(){
+	float area;
+	area=(base*altura);
+	return area;
+}
+
+EjemploMenuV.cpp
+#include "stdafx.h"
+#include <iostream>
+#include "MenuV.h"
+#include "conio.h"
+using namespace std;
+int main(){
+	float b,h,k;
+	cout<<"ingrese la base del paralelogramo: ";
+	cin>>b;
+	cout<<"ingrese la altura del paralelogramo: ";
+	cin>>h;
+	MenuV Area(b,h);
+	k=Area.paralelogramo();
+	cout<<"el area es: "<<k;
+	getch();
+	return(0);
+}
