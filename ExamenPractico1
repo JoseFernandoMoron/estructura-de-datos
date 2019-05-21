@@ -1,0 +1,109 @@
+#pragma once
+#define MAX 100
+#include <string>
+using namespace std;
+class pila
+{
+private:
+	int tope;
+	string vec[MAX];
+public:
+	pila(void);
+	bool apilar(string x);
+	bool eliminar(string &x);
+	bool pilavacia();
+	bool pillallena();
+	void verpila();
+	~pila(void);
+};
+
+#include "StdAfx.h"
+#include "pila.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+pila::pila(void)
+{
+	tope=-1;
+}
+
+bool pila::pillallena(){
+	if(tope==MAX-1){
+		return true;}
+	else{
+		return false;}
+}
+bool pila::pilavacia(){
+	if(tope==-1){
+		return true;}
+	else{
+		return false;
+	}
+}
+bool pila::apilar(string x){
+	if(pillallena()){
+		return false;}
+	else{
+		tope++;
+		vec[tope]=x;
+		return true;}
+}
+bool pila::eliminar(string &x){
+	if(pilavacia()){
+		return false;}
+	else{
+		x=vec[tope];
+		tope--;
+		return true;
+	}
+}
+
+void pila::verpila(){
+for(int i=0;i<=tope;i++){
+cout << vec[i] << endl;
+
+}}
+
+
+
+
+
+pila::~pila(void)
+{
+}
+
+
+#include "stdafx.h"
+#include "pila.h"
+#include <iostream>
+#include <string>
+#include "conio.h"
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+	string x;
+	int n;
+	pila A;
+	cout<<"ingrese los datos del auto en este orden"<<endl;
+	cout<<"1.Placa"<<endl;
+		getline(cin,x);
+		A.apilar(x);
+	cout<<"2.modelo"<<endl;
+		getline(cin,x);
+		A.apilar(x);
+	cout<<"3.Anho"<<endl;
+		getline(cin,x);
+		A.apilar(x);
+	cout<<"4.Chasis"<<endl;
+		getline(cin,x);
+		A.apilar(x);
+	cout<<"5.Marca"<<endl;
+		getline(cin,x);
+		A.apilar(x);
+
+	A.verpila();
+
+	getch();
+	return(0);
+}
